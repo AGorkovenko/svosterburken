@@ -1,0 +1,92 @@
+{
+  "$description": "Design Tokens des SV 1919 Osterburken e.V. (Format: W3C Design Tokens Community Group). Quelle der Wahrheit für Website, App und Druck.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "crest":     { "$value": "#1B3D8C", "$description": "Wappenblau – Logo, Überschriften auf Hell" },
+      "blue":      { "$value": "#2352D6", "$description": "Trikotblau – Buttons, Links, aktive Elemente" },
+      "blue-deep": { "$value": "#16307A", "$description": "Hover von Trikotblau" },
+      "ink":       { "$value": "#0A1638", "$description": "Text und dunkle Flächen" }
+    },
+    "department": {
+      "fussball": {
+        "base": { "$value": "#12A05A", "$description": "Fläche, Streifen – Text darauf: ink" },
+        "soft": { "$value": "#E2F5EA" },
+        "ink":  { "$value": "#0B6B3B", "$description": "Text in Abteilungsfarbe auf Hell" }
+      },
+      "turnen": {
+        "base": { "$value": "#FF6F3C", "$description": "Fläche, Streifen – Text darauf: ink, nie Weiß" },
+        "soft": { "$value": "#FFEBE2" },
+        "ink":  { "$value": "#B23E12" }
+      },
+      "fitness": {
+        "base": { "$value": "#E23D7F", "$description": "Fläche, Streifen – Text darauf: Weiß" },
+        "soft": { "$value": "#FCE5EE" },
+        "ink":  { "$value": "#A61F55" }
+      },
+      "verein": {
+        "base": { "$value": "{color.brand.blue}" },
+        "soft": { "$value": "#E3EAFB" },
+        "ink":  { "$value": "{color.brand.crest}" }
+      }
+    },
+    "signal": {
+      "today": { "$value": "#FFC933", "$description": "Leibchen-Gelb – nur „Heute“, „Läuft“, Uhrzeiten auf Dunkel" }
+    },
+    "neutral": {
+      "bg":       { "$value": "#F2F5FA", "$description": "Hallenboden – Seitenhintergrund" },
+      "white":    { "$value": "#FFFFFF" },
+      "line":     { "$value": "#DCE2EE" },
+      "ink-soft": { "$value": "#4A5578", "$description": "Leiser Text" }
+    }
+  },
+  "font": {
+    "display": {
+      "$type": "fontFamily", "$value": ["Archivo", "Arial Narrow", "sans-serif"],
+      "$description": "italic, 850, font-variation-settings 'wdth' 72, VERSALIEN, Zeilenhöhe 0.88–0.9"
+    },
+    "label": {
+      "$type": "fontFamily", "$value": ["Archivo", "sans-serif"],
+      "$description": "700, 'wdth' 115, VERSALIEN, letter-spacing 0.14em"
+    },
+    "body": { "$type": "fontFamily", "$value": ["Instrument Sans", "system-ui", "sans-serif"] }
+  },
+  "fontSize": {
+    "$type": "dimension",
+    "hero":    { "$value": "clamp(3.2rem, 7.4vw, 7.6rem)" },
+    "h2":      { "$value": "clamp(2.3rem, 5.2vw, 4.2rem)" },
+    "h3":      { "$value": "1.4rem" },
+    "lead":    { "$value": "1.2rem" },
+    "body":    { "$value": "17px" },
+    "small":   { "$value": "0.88rem" },
+    "label":   { "$value": "0.78rem" }
+  },
+  "space": {
+    "$type": "dimension",
+    "1": { "$value": "4px" },  "2": { "$value": "8px" },  "3": { "$value": "12px" },
+    "4": { "$value": "16px" }, "5": { "$value": "24px" }, "6": { "$value": "32px" },
+    "7": { "$value": "48px" }, "8": { "$value": "72px" },
+    "section": { "$value": "clamp(64px, 9vw, 116px)" },
+    "gutter":  { "$value": "clamp(16px, 4vw, 40px)" },
+    "wrap":    { "$value": "1440px", "$description": "maximale Inhaltsbreite" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "tag":   { "$value": "6px" },
+    "field": { "$value": "10px" },
+    "card":  { "$value": "16px" },
+    "band":  { "$value": "22px" },
+    "pill":  { "$value": "999px" }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "raised": { "$value": { "offsetX": "0px", "offsetY": "24px", "blur": "48px", "spread": "-28px", "color": "#0A163873" }, "$description": "nur Hover und Menüs" }
+  },
+  "breakpoint": {
+    "$type": "dimension",
+    "week-list": { "$value": "1100px" },
+    "mobile-nav": { "$value": "1080px" },
+    "one-column": { "$value": "1000px" },
+    "phone": { "$value": "640px" }
+  }
+}

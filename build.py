@@ -3,7 +3,7 @@
 
     python3 build.py
 
-Liest  src/pages/*.html   (Kopfzeilen bis '---': title, description, theme, nav, scripts)
+Liest  src/pages/*.html   (Kopfzeilen bis '---': title, description, theme, nav, scripts, robots)
        src/partials/      (header.html, footer.html)
        src/data/*.json    (Beiträge, Sponsoren)
 schreibt public/*.html und public/aktuelles/<slug>.html.
@@ -148,6 +148,7 @@ def render(body, meta, root, ctx):
     for k, fn in reps.items():
         if k in page:
             page = page.replace(k, fn())
+    page = page.replace('{{robots_meta}}', '<meta name="robots" content="noindex, nofollow">' if meta.get('robots') else '')
     for k in ('title', 'description', 'theme'):
         page = page.replace('{{%s}}' % k, html.escape(meta.get(k, ''), quote=True))
     page = page.replace('{{year}}', str(datetime.date.today().year))

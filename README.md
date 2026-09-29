@@ -29,6 +29,12 @@ Statische Website ohne Datenbank. Seiten werden mit einem kleinen Python-Skript 
 - **Neuer Beitrag:** Eintrag in `src/data/news.json` ergänzen (slug, date, title, cats, image, excerpt, body), Bild nach `public/assets/img/news/` und Vorschaubild nach `news/thumb/`, dann `python3 build.py`.
 - **Vorstandsfoto:** Foto nach `public/assets/img/vorstand/` legen und in `build.py` (`VORSTAND`) statt Platzhalter verwenden.
 
+## Design System
+
+- `public/design-system.html` – interne Referenzseite (nicht verlinkt, `noindex`): Farben, Schriften, Icons, Bausteine, Code-Beispiele
+- `public/assets/design-tokens.json` – alle Tokens im W3C-Format für andere Produkte (App, Druck, Social Media)
+- Abteilungsfarben über `data-theme` (`fussball`, `turnen`, `fitness`, `verein`) → `--accent`, `--accent-soft`, `--accent-ink`, `--on-accent`
+
 ## Icons in Seiten
 
 - `{{icon:arrow}}` – kleines Vektor-Icon (Buttons, Listen)
