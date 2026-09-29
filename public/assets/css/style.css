@@ -506,7 +506,10 @@ h2.display { font-size: clamp(2.3rem, 5.2vw, 4.2rem); }
 .form-error { margin-top: 16px; padding: 16px 18px; border-radius: 12px; background: var(--berry-soft); color: #8A1743; font-weight: 600; }
 
 /* Kontakt */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 12px; }
+/* 3 / 2 / 1 Spalten: Breakpoints so gewählt, dass die längste Adresse (jugend.fussball@…) in eine Zeile passt */
+.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 1199px) { .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 819px) { .contact-grid { grid-template-columns: 1fr; } }
 .contact-card { display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: start; background: var(--white); border-radius: var(--radius); padding: 20px; border: 1px solid var(--line); text-decoration: none; transition: border-color .2s, transform .2s; }
 .contact-card:hover { border-color: var(--c, var(--blue)); transform: translateY(-2px); }
 .contact-card > .art { width: 56px; height: 56px; }
@@ -514,6 +517,12 @@ h2.display { font-size: clamp(2.3rem, 5.2vw, 4.2rem); }
 .contact-card small { display: block; font: 700 .72rem/1.4 var(--display); letter-spacing: .12em; text-transform: uppercase; color: color-mix(in srgb, var(--c, var(--blue)) 68%, #000); }
 .contact-card b { display: block; font-size: .96rem; overflow-wrap: anywhere; }
 .contact-card span { color: var(--ink-soft); font-size: .88rem; }
+@media (max-width: 480px) {
+  .contact-card { grid-template-columns: 44px 1fr; gap: 12px; padding: 16px; }
+  .contact-card > .art { width: 44px; height: 44px; }
+  .contact-card b { font-size: .9rem; }
+  .contact-card span { font-size: .84rem; }
+}
 
 /* Fließtext */
 .prose { max-width: 720px; font-size: 1.04rem; }
