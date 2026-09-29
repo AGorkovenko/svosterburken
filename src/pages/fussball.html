@@ -1,0 +1,81 @@
+title: Fußball – SV 1919 Osterburken e.V.
+description: Fußball beim SV Osterburken: Bambini bis Erste Mannschaft, Trainingszeiten, Trainer und Ansprechpartner.
+theme: fussball
+nav: fussball
+---
+<section class="dept-hero">
+  {{motif:pitch}}
+  <div class="wrap dept-hero__grid">
+    <div>
+      <p class="eyebrow">Abteilung</p>
+      <h1 class="display">Fußball</h1>
+      <p class="lead">Von den ersten Ballkontakten bei den Bambini bis zur Ersten Mannschaft. Bei uns zählen Teamgeist und Fairplay – egal ob du ehrgeizig spielst oder einfach kicken willst.</p>
+      <ul class="facts">
+        <li><b data-count="fussball">8</b>Teams</li>
+        <li><b>6</b>Jugendteams</li>
+        <li><b>SG</b>ab C-Jugend mit Adelsheim, Sennfeld, Roigheim</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn--accent" href="#teams">{{icon:jersey}}Teams ansehen</a>
+        <a class="btn btn--outline-light" href="mailto:fussball@svosterburken.de">{{icon:mail}}Probetraining anfragen</a>
+      </div>
+    </div>
+    <div class="dept-hero__img"><img src="assets/img/team.jpg" alt="Die Aktiven des SVO beim Mannschaftsfoto" style="object-position: 40% center"></div>
+  </div>
+</section>
+
+<section class="section section--white" id="teams">
+  <div class="wrap">
+    <div class="section__head">
+      <div><p class="eyebrow">Mannschaften</p><h2 class="display">Unsere Teams</h2></div>
+      <p class="lead">Eine A-Jugend können wir im Moment leider nicht stellen. Wenn du 17 oder 18 bist und spielen willst, schreib uns trotzdem.</p>
+    </div>
+    <div class="teams" data-teams></div>
+  </div>
+</section>
+
+<section class="section" id="woche">
+  <div class="wrap">
+    <div class="section__head"><div><p class="eyebrow">Wochenplan</p><h2 class="display">Trainingszeiten</h2></div></div>
+    <div class="week" data-week="fussball"></div>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="wrap">
+    <div class="section__head"><div><p class="eyebrow">Mehr Fußball</p><h2 class="display">Rund um den Platz</h2></div></div>
+    <div class="tiles">
+      <a class="tile tile--img" href="schiedsrichter.html">
+        <img src="assets/img/schiedsrichter-wir-suchen-dich.jpg" alt="" loading="lazy">
+        <div class="tile__body"><h3>Schiedsrichter</h3><p>Ab 12 Jahren: Ausbildung, Ausrüstung und freier Eintritt zu DFB-Spielen.</p><span class="go">Mehr erfahren {{icon:arrow}}</span></div>
+      </a>
+      <a class="tile tile--img" href="partnerschaften.html">
+        <img src="assets/img/gen/partnerschaften.jpg" alt="" loading="lazy" style="object-position:center 40%">
+        <div class="tile__body"><h3>Partnerschaften</h3><p>Warum wir mit anderen Vereinen aus der Region zusammenarbeiten.</p><span class="go">Mehr erfahren {{icon:arrow}}</span></div>
+      </a>
+      <a class="tile" href="downloads.html">
+        {{art:file}}
+        <h3>Spielerpass</h3>
+        <p>Erstmalige Spielerlaubnis oder Vereinswechsel – beide Anträge kannst du online ausfüllen.</p>
+        <span class="go">Zu den Formularen {{icon:arrow}}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section__head"><div><p class="eyebrow">Ansprechpartner</p><h2 class="display">Fragen zum Fußball?</h2></div></div>
+    <div class="contact-grid" style="--c:var(--pitch)">
+      <a class="contact-card" href="mailto:fussball@svosterburken.de">{{art:mail}}<div><small>Abteilungsleitung</small><b>fussball@svosterburken.de</b><span>Andreas Siegfried, Robert Maier</span></div></a>
+      <a class="contact-card" href="mailto:jugend.fussball@svosterburken.de">{{art:child}}<div><small>Jugendleitung</small><b>jugend.fussball@svosterburken.de</b><span>Holger Karle (Bambini–E), Stefan Elert (D–A)</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white section--tight">
+  <div class="wrap">
+    <div class="section__head"><div><p class="eyebrow">Aktuelles</p><h2 class="display">Neues vom Fußball</h2></div><a class="btn btn--ghost" href="aktuelles.html#fussball">Alle Fußball-Beiträge {{icon:arrow}}</a></div>
+    <div class="news-grid" data-news-list>{{news_cat:fussball:2}}</div>
+  </div>
+</section>

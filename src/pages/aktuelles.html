@@ -1,0 +1,26 @@
+title: Aktuelles – SV 1919 Osterburken e.V.
+description: Neuigkeiten, Termine und Rückblicke aus Fußball, Turnen und Fitness beim SV Osterburken.
+theme: verein
+nav: aktuelles
+---
+<section class="page-hero">
+  {{motif:stripes}}
+  <div class="wrap">
+    <p class="eyebrow">Aktuelles</p>
+    <h1 class="display">Neu im Verein</h1>
+    <p class="lead">Termine, Rückblicke und Neuigkeiten aus allen Abteilungen. Fotos und kurzfristige Infos findest du auch auf <a href="https://www.instagram.com/svo1919/" target="_blank" rel="noopener">Instagram</a>.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="chips" data-news-filter role="group" aria-label="Beiträge filtern">
+      <button type="button" class="chip" data-cat="" aria-pressed="true">Alle</button>
+      <button type="button" class="chip" data-cat="fussball" aria-pressed="false" style="--c:var(--pitch)"><i></i>Fußball</button>
+      <button type="button" class="chip" data-cat="turnen" aria-pressed="false" style="--c:var(--coral)"><i></i>Turnen</button>
+      <button type="button" class="chip" data-cat="fitness" aria-pressed="false" style="--c:var(--berry)"><i></i>Fitness</button>
+      <button type="button" class="chip" data-cat="verein" aria-pressed="false" style="--c:var(--crest)"><i></i>Verein</button>
+    </div>
+    <div class="news-grid" data-news-list>{{news_all}}</div>
+  </div>
+</section>

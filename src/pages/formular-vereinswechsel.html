@@ -1,0 +1,87 @@
+title: Vereinswechsel online beantragen – SV 1919 Osterburken e.V.
+description: Antrag auf Vereinswechsel zum SV 1919 Osterburken online ausfüllen.
+theme: fussball
+nav: fussball
+scripts: vendor/pdf-lib.min.js, js/forms.js
+---
+<section class="page-hero">
+  {{motif:stripes}}
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Brotkrumen"><a href="downloads.html">Formulare</a><span>/</span><span>Online ausfüllen</span></nav>
+    <p class="eyebrow">Fußball</p><h1 class="display">Vereins&shy;wechsel</h1><p class="lead">Du spielst schon in einem anderen Verein und willst zum SVO wechseln? Dann füll diesen Antrag aus.</p>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="wrap form-layout">
+    <form data-pdf-form data-pdf="assets/docs/Antrag-Vereinswechsel_beschreibbar.pdf" data-filename="SVO_Vereinswechsel">
+      <input type="hidden" data-f="Antragstellender Verein" value="SV 1919 Osterburken e.V.">
+      <fieldset class="fs">
+        <legend><span class="num">1</span>Spielberechtigung</legend>
+        <div class="choice"><label><input type="radio" name="art" value="Auswahl1" data-radio="Gruppe1" required><span>Fußball</span></label><label><input type="radio" name="art" value="Auswahl2" data-radio="Gruppe1" required><span>Futsal</span></label></div>
+      </fieldset>
+      <fieldset class="fs">
+        <legend><span class="num">2</span>Spieler/-in</legend>
+        <div class="grid-2">
+          <label class="field"><span>Nachname <em>*</em></span><input type="text" name="nn" data-f="Fußball Futsal Freizeit nur beim wfvNachname des Spielersin" data-name-part required></label>
+          <label class="field"><span>Vorname <em>*</em></span><input type="text" name="vn" data-f="Fußball Futsal Freizeit nur beim wfvVorname des Spielersin" required></label>
+          <label class="field"><span>Geburtsdatum <em>*</em></span><input type="date" name="gb" data-f="Fußball Futsal Freizeit nur beim wfvGeburtsdatum" required></label>
+          <label class="field"><span>Passnummer</span><input type="text" name="pass" data-f="Fußball Futsal Freizeit nur beim wfvPassnummer"></label>
+          <label class="field span-2"><span>Anschrift (Straße, PLZ, Ort) <em>*</em></span><input type="text" name="adr" data-f="Fußball Futsal Freizeit nur beim wfvAnschrift Straße PLZ Ort" required></label>
+          <label class="field"><span>Nationalität <em>*</em></span><input type="text" name="nat" data-f="Fußball Futsal Freizeit nur beim wfvNationalität" value="deutsch" required></label>
+        </div>
+      </fieldset>
+      <fieldset class="fs">
+        <legend><span class="num">3</span>Bisheriger Verein</legend>
+        <div class="grid-2">
+          <label class="field"><span>Abgebender Verein <em>*</em></span><input type="text" name="alt" data-f="Fußball Futsal Freizeit nur beim wfvAbgebender Verein" required></label>
+          <label class="field"><span>Abgebender National-/Landesverband <em>*</em></span><input type="text" name="verband" data-f="Fußball Futsal Freizeit nur beim wfvAbgebender NationalLandesverband" value="bfv" required></label>
+        </div>
+        <div class="field" style="margin-top:16px"><span>Abmeldung beim bisherigen Verein <em>*</em></span>
+          <div class="choice" style="display:grid;gap:8px">
+            <label><input type="radio" name="abm" value="Auswahl1" data-radio="Abmeldung" required><span>Ich habe mich bereits schriftlich abgemeldet (Kündigung oder Bestätigung liegt vor).</span></label>
+            <label><input type="radio" name="abm" value="Auswahl2" data-radio="Abmeldung"><span>Ich bin noch nicht abgemeldet und beauftrage den SVO, mich über DFBnet abzumelden.</span></label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="fs">
+        <legend><span class="num">4</span>Einwilligungen (freiwillig)</legend>
+        <label class="check"><input type="checkbox" data-check="Kontrollkästchen5"><span>Das Passfoto darf auf den Internetseiten des Verbands und auf FUSSBALL.DE veröffentlicht werden. <small>Jederzeit widerrufbar.</small></span></label>
+        <label class="check" style="margin-top:12px"><input type="checkbox" data-check="Kontrollkästchen6"><span>Meine Adressdaten dürfen für Marketingzwecke des DFB, seiner Verbände und Partner genutzt werden. <small>Jederzeit widerrufbar.</small></span></label>
+      </fieldset>
+      <fieldset class="fs">
+        <legend><span class="num">5</span>Unterschriften</legend>
+        <div class="grid-2">
+          <label class="field"><span>Ort <em>*</em></span><input type="text" name="ort" data-f="Ort Datum" data-append-date value="Osterburken" required></label>
+          <div class="field span-2"><span>Unterschrift Spieler/-in</span>
+  <div class="sig" data-sig='[[1,205,268,108,28]]'><canvas aria-label="Unterschrift Spieler/-in: mit Maus oder Finger unterschreiben"></canvas><span class="sig__line"></span>
+  <div class="sig__bar"><span>Mit Maus oder Finger unterschreiben (optional)</span><button type="button" data-sig-clear>Löschen</button></div></div>
+</div>
+          <div class="field span-2"><span>Unterschrift gesetzl. Vertreter (bei Minderjährigen)</span>
+  <div class="sig" data-sig='[[1,332,268,180,28]]'><canvas aria-label="Unterschrift gesetzl. Vertreter (bei Minderjährigen): mit Maus oder Finger unterschreiben"></canvas><span class="sig__line"></span>
+  <div class="sig__bar"><span>Mit Maus oder Finger unterschreiben (optional)</span><button type="button" data-sig-clear>Löschen</button></div></div>
+</div>
+        </div>
+      </fieldset>
+      <div class="form-submit">
+        <p>{{icon:lock}}<span>Das PDF wird in deinem Browser erstellt. Deine Angaben werden nirgendwohin übertragen.</span></p>
+        <button class="btn btn--light" type="submit">{{icon:download}}PDF erstellen</button>
+      </div>
+      <p class="form-error" data-error hidden role="alert"></p>
+      <div class="form-result" data-result hidden role="status">
+        <h3>{{icon:check}}Fertig: <span data-file></span></h3>
+        <p>Das ausgefüllte PDF wurde heruntergeladen. So geht es weiter:</p>
+        <ol>
+          <li>PDF prüfen – du kannst es bei Bedarf noch bearbeiten.</li>
+          <li>Unterschreiben, falls noch nicht geschehen.</li>
+          <li>Beim Training abgeben oder per E-Mail an <a href="mailto:info@svosterburken.de">info@svosterburken.de</a> schicken.</li>
+        </ol>
+        <a class="btn btn--sm btn--ghost" data-open href="#" target="_blank">{{icon:file}}PDF öffnen</a>
+      </div>
+    </form>
+    <aside class="form-aside">
+      <div class="card"><h3>{{icon:check}}So geht's</h3><ol><li>Formular ausfüllen und unterschreiben.</li><li>„PDF erstellen“ klicken.</li><li>PDF an fussball@svosterburken.de schicken oder beim Training abgeben.</li></ol></div>
+      <div class="card"><h3>{{icon:lock}}Deine Daten</h3><p>Das Formular wird nur in deinem Browser ausgefüllt. Es wird nichts an die Website oder an Dritte übertragen.</p></div>
+      <div class="card"><h3>{{icon:download}}Lieber auf Papier?</h3><p>Lade das leere PDF herunter und fülle es von Hand aus.</p><a class="btn btn--sm btn--ghost" href="assets/docs/Antrag-Vereinswechsel_beschreibbar.pdf" download>{{icon:file}}Leeres PDF</a></div>
+    </aside>
+  </div>
+</section>

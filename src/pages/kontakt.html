@@ -1,0 +1,74 @@
+title: Kontakt – SV 1919 Osterburken e.V.
+description: Kontakt zum SV Osterburken: E-Mail-Adressen der Abteilungen, Kontaktformular, Anschrift und Sportgelände.
+theme: verein
+nav: kontakt
+---
+<section class="page-hero">
+  {{motif:stripes}}
+  <div class="wrap">
+    <p class="eyebrow">Kontakt</p>
+    <h1 class="display">Schreib uns</h1>
+    <p class="lead">Am schnellsten geht's per E-Mail an die passende Abteilung. Oder du kommst direkt zum Training – die Zeiten stehen im <a href="index.html#woche">Wochenplan</a>. Ausnahmsweise kann ein Training auch mal ausfallen.</p>
+  </div>
+</section>
+
+<section class="section section--white section--tight">
+  <div class="wrap">
+    <div class="contact-grid">
+      <a class="contact-card" style="--c:var(--pitch)" href="mailto:fussball@svosterburken.de">{{art:ball}}<div><small>Fußball</small><b>fussball@svosterburken.de</b><span>Teams, Probetraining, Spielerpass</span></div></a>
+      <a class="contact-card" style="--c:var(--pitch)" href="mailto:jugend.fussball@svosterburken.de">{{art:jersey}}<div><small>Fußball-Jugend</small><b>jugend.fussball@svosterburken.de</b><span>Bambini bis A-Jugend</span></div></a>
+      <a class="contact-card" style="--c:var(--coral)" href="mailto:turnen@svosterburken.de">{{art:child}}<div><small>Turnen</small><b>turnen@svosterburken.de</b><span>Kinder-, Frauen- und Männergruppen, Sportabzeichen</span></div></a>
+      <a class="contact-card" style="--c:var(--berry)" href="mailto:fitnesskurse@svosterburken.de">{{art:music}}<div><small>Fitness</small><b>fitnesskurse@svosterburken.de</b><span>Bodycombat und Zumba</span></div></a>
+      <a class="contact-card" href="mailto:info@svosterburken.de">{{art:mail}}<div><small>Allgemein</small><b>info@svosterburken.de</b><span>Mitgliedschaft und alles andere</span></div></a>
+      <a class="contact-card" href="mailto:vorstand@svosterburken.de">{{art:users}}<div><small>Vorstand</small><b>vorstand@svosterburken.de</b><span>Gustav Hofmann, Tabitha Heinemann</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap form-layout">
+    <form class="contact-form" data-contact-form>
+      <fieldset class="fs">
+        <legend><span class="num">{{icon:mail}}</span>Nachricht schreiben</legend>
+        <div class="grid-2">
+          <label class="field"><span>Name <em>*</em></span><input name="name" required autocomplete="name"></label>
+          <label class="field"><span>E-Mail <em>*</em></span><input name="email" type="email" required autocomplete="email"></label>
+          <label class="field"><span>Telefon</span><input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="field"><span>Worum geht's? <em>*</em></span>
+            <select name="to" required>
+              <option value="">Bitte wählen</option>
+              <option value="fussball@svosterburken.de">Fußball</option>
+              <option value="jugend.fussball@svosterburken.de">Fußball-Jugend</option>
+              <option value="turnen@svosterburken.de">Turnen</option>
+              <option value="fitnesskurse@svosterburken.de">Fitnesskurse</option>
+              <option value="info@svosterburken.de">Allgemeines</option>
+            </select>
+          </label>
+          <label class="field span-2"><span>Betreff</span><input name="subject" placeholder="z. B. Probetraining für meine Tochter"></label>
+          <label class="field span-2"><span>Nachricht <em>*</em></span><textarea name="message" required></textarea></label>
+        </div>
+      </fieldset>
+      <div class="form-submit">
+        <p>{{icon:lock}}<span>Dein E-Mail-Programm öffnet sich mit der fertigen Nachricht. Über die Website selbst wird nichts gespeichert oder verschickt.</span></p>
+        <button class="btn btn--light" type="submit">{{icon:mail}}E-Mail öffnen</button>
+      </div>
+      <p class="form-result" data-sent hidden>Falls sich kein E-Mail-Programm geöffnet hat, schreib bitte direkt an die Adresse der Abteilung oben.</p>
+    </form>
+    <aside class="form-aside">
+      <div class="card">
+        <h3>{{icon:pin}}Sportgelände</h3>
+        <p>Sportplatzweg 1<br>74706 Osterburken</p>
+        <a class="btn btn--sm btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Sportplatzweg+1+74706+Osterburken" target="_blank" rel="noopener">In Google Maps öffnen</a>
+      </div>
+      <div class="card">
+        <h3>{{icon:mail}}Post</h3>
+        <p>SV 1919 Osterburken e.V.<br>Postfach 1244<br>74702 Osterburken</p>
+      </div>
+      <div class="card">
+        <h3>{{icon:instagram}}@svo1919</h3>
+        <p>Fotos und Neuigkeiten aus dem Vereinsleben.</p>
+        <p><a href="https://www.instagram.com/svo1919/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/svo1919/" target="_blank" rel="noopener">Facebook</a></p>
+      </div>
+    </aside>
+  </div>
+</section>

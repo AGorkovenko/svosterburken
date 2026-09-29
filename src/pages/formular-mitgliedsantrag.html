@@ -1,0 +1,193 @@
+title: Mitgliedsantrag online ausfüllen – SV 1919 Osterburken e.V.
+description: Aufnahmeantrag des SV 1919 Osterburken e.V. online ausfüllen und als PDF speichern.
+theme: verein
+nav: verein
+scripts: vendor/pdf-lib.min.js, js/forms.js
+---
+<section class="page-hero">
+  {{motif:stripes}}
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Brotkrumen"><a href="downloads.html">Formulare</a><span>/</span><span>Online ausfüllen</span></nav>
+    <p class="eyebrow">Aufnahmeantrag 2026</p><h1 class="display">Mitglied werden</h1><p class="lead">Füll den Antrag hier aus – am Ende bekommst du das offizielle Vereins-PDF mit all deinen Angaben zum Speichern oder Ausdrucken.</p>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="wrap form-layout">
+    <form data-pdf-form data-pdf="assets/docs/SVO_Mitgliedsantrag_2026.pdf" data-filename="SVO_Mitgliedsantrag">
+      <fieldset class="fs">
+        <legend><span class="num">1</span>Mitgliedschaft</legend>
+        <div class="choice choice--cards">
+          <label><input type="radio" name="art" value="E" data-radio="radioMitgliedschaft" required><span><b>69 €</b>Für mich<small>ab 18 Jahren, pro Jahr</small></span></label>
+          <label><input type="radio" name="art" value="K" data-radio="radioMitgliedschaft"><span><b>59 €</b>Für mein Kind<small>bis 17 Jahre, pro Jahr</small></span></label>
+          <label><input type="radio" name="art" value="F" data-radio="radioMitgliedschaft"><span><b>110 €</b>Familie<small>mich, Partner/-in und Kinder</small></span></label>
+        </div>
+        <div class="grid-2" style="margin-top:16px">
+          <label class="field"><span>Eintrittsdatum <em>*</em></span><input type="date" name="eintritt" data-f="txtEintrittsdatum" required></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs">
+        <legend><span class="num">2</span>Antragsteller/-in</legend>
+        <p class="fs__hint" data-show-if="art=K">Du beantragst die Mitgliedschaft für dein Kind. Trag hier deine Daten als erziehungsberechtigte Person ein.</p>
+        <div class="grid-2">
+          <label class="field"><span>Vorname <em>*</em></span><input type="text" name="vn" data-f="txtVornameAntragsteller" autocomplete="given-name" required></label>
+          <label class="field"><span>Nachname <em>*</em></span><input type="text" name="nn" data-f="txtNachnameAntragsteller" autocomplete="family-name" data-name-part required></label>
+          <label class="field"><span>Geburtsdatum (ab 18) <em>*</em></span><input type="date" name="gb" data-f="txtGeburtsdatumAntragsteller" autocomplete="bday" required></label>
+          <div class="field"><span>Geschlecht</span><div class="choice"><label><input type="radio" name="ge" value="m" data-radio="radioGeschlechtAntragsteller"><span>männlich</span></label><label><input type="radio" name="ge" value="w" data-radio="radioGeschlechtAntragsteller"><span>weiblich</span></label><label><input type="radio" name="ge" value="d" data-radio="radioGeschlechtAntragsteller"><span>divers</span></label><label><input type="radio" name="ge" value="u" data-radio="radioGeschlechtAntragsteller"><span>keine Angabe</span></label></div></div>
+        </div>
+        <div class="grid-3" style="margin-top:14px">
+          <label class="field"><span>Straße <em>*</em></span><input type="text" name="str" data-f="txtStrasseAntragsteller" autocomplete="address-line1" required></label>
+          <label class="field"><span>Hausnr. <em>*</em></span><input type="text" name="hnr" data-f="txtHausNrAntragsteller" required></label>
+          <label class="field"><span>PLZ <em>*</em></span><input type="text" name="plz" data-f="txtPLZAntragsteller" autocomplete="postal-code" inputmode="numeric" required></label>
+          <label class="field"><span>Ort <em>*</em></span><input type="text" name="ort" data-f="txtOrtAntragsteller" autocomplete="address-level2" required></label>
+          <label class="field"><span>Land <em>*</em></span><input type="text" name="land" data-f="txtLandAntragsteller" value="Deutschland" autocomplete="country-name" required></label>
+        </div>
+        <div class="grid-2" style="margin-top:14px">
+          <label class="field"><span>E-Mail <em>*</em></span><input type="email" name="mail" data-f="txtEMail" autocomplete="email" required></label>
+          <label class="field"><span>Telefon <em>*</em></span><input type="tel" name="tel" data-f="txtTelefon" autocomplete="tel" required></label>
+        </div>
+        <div class="sub-fs" data-show-if="art=E,F">
+          <h4>{{icon:ball}}Deine Abteilung</h4>
+          <div class="choice"><label><input type="radio" name="ab" value="f" data-radio="radioAbteilungAntragsteller" required><span>Fußball</span></label><label><input type="radio" name="ab" value="t" data-radio="radioAbteilungAntragsteller" required><span>Turnen</span></label></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs" data-show-if="art=K">
+        <legend><span class="num">3</span>Dein Kind</legend>
+        <div class="sub-fs" data-show-if="art=K">
+  <h4>{{icon:child}}Kind</h4>
+  <div class="grid-2">
+    <label class="field"><span>Vorname <em>*</em></span><input type="text" name="vnKind" data-f="txtVornameKind" autocomplete="off" required></label>
+    <label class="field"><span>Nachname <em>*</em></span><input type="text" name="nnKind" data-f="txtNachnameKind" autocomplete="off" required></label>
+    <label class="field"><span>Geburtsdatum (unter 18) <em>*</em></span><input type="date" name="gbKind" data-f="txtGeburtsdatumKind" required></label>
+    <div class="field"><span>Abteilung <em>*</em></span><div class="choice"><label><input type="radio" name="abKind" value="f" data-radio="radioAbteilungKind" required><span>Fußball</span></label><label><input type="radio" name="abKind" value="t" data-radio="radioAbteilungKind" required><span>Turnen</span></label></div></div>
+    <div class="field span-2"><span>Geschlecht</span><div class="choice"><label><input type="radio" name="geKind" value="m" data-radio="radioGeschlechtKind"><span>männlich</span></label><label><input type="radio" name="geKind" value="w" data-radio="radioGeschlechtKind"><span>weiblich</span></label><label><input type="radio" name="geKind" value="d" data-radio="radioGeschlechtKind"><span>divers</span></label><label><input type="radio" name="geKind" value="u" data-radio="radioGeschlechtKind"><span>keine Angabe</span></label></div></div>
+  </div>
+</div>
+      </fieldset>
+
+      <fieldset class="fs" data-show-if="art=F">
+        <legend><span class="num">3</span>Familie</legend>
+        <label class="check"><input type="checkbox" name="partner" data-check="checkPartner"><span>Partner/-in wird Mitglied</span></label>
+        <div class="field" style="margin-top:16px"><span>Anzahl Kinder <em>*</em></span>
+          <div class="choice"><label><input type="radio" name="kids" value="0" data-radio="choiceKinder" required><span>0</span></label><label><input type="radio" name="kids" value="1" data-radio="choiceKinder" required><span>1</span></label><label><input type="radio" name="kids" value="2" data-radio="choiceKinder" required><span>2</span></label><label><input type="radio" name="kids" value="3" data-radio="choiceKinder" required><span>3</span></label><label><input type="radio" name="kids" value="4" data-radio="choiceKinder" required><span>4</span></label></div>
+        </div>
+        <div class="sub-fs" data-show-if="partner">
+  <h4>{{icon:users}}Partner/-in</h4>
+  <div class="grid-2">
+    <label class="field"><span>Vorname <em>*</em></span><input type="text" name="vnPartner" data-f="txtVornamePartner" autocomplete="off" required></label>
+    <label class="field"><span>Nachname <em>*</em></span><input type="text" name="nnPartner" data-f="txtNachnamePartner" autocomplete="off" required></label>
+    <label class="field"><span>Geburtsdatum (ab 18) <em>*</em></span><input type="date" name="gbPartner" data-f="txtGeburtsdatumPartner" required></label>
+    <div class="field"><span>Abteilung <em>*</em></span><div class="choice"><label><input type="radio" name="abPartner" value="f" data-radio="radioAbteilungPartner" required><span>Fußball</span></label><label><input type="radio" name="abPartner" value="t" data-radio="radioAbteilungPartner" required><span>Turnen</span></label></div></div>
+    <div class="field span-2"><span>Geschlecht</span><div class="choice"><label><input type="radio" name="gePartner" value="m" data-radio="radioGeschlechtPartner"><span>männlich</span></label><label><input type="radio" name="gePartner" value="w" data-radio="radioGeschlechtPartner"><span>weiblich</span></label><label><input type="radio" name="gePartner" value="d" data-radio="radioGeschlechtPartner"><span>divers</span></label><label><input type="radio" name="gePartner" value="u" data-radio="radioGeschlechtPartner"><span>keine Angabe</span></label></div></div>
+  </div>
+</div>
+        <div class="sub-fs" data-show-if="kids>=1">
+  <h4>{{icon:child}}1. Kind</h4>
+  <div class="grid-2">
+    <label class="field"><span>Vorname <em>*</em></span><input type="text" name="vnKind0" data-f="txtVornameKind0" autocomplete="off" required></label>
+    <label class="field"><span>Nachname <em>*</em></span><input type="text" name="nnKind0" data-f="txtNachnameKind0" autocomplete="off" required></label>
+    <label class="field"><span>Geburtsdatum (unter 18) <em>*</em></span><input type="date" name="gbKind0" data-f="txtGeburtsdatumKind0" required></label>
+    <div class="field"><span>Abteilung <em>*</em></span><div class="choice"><label><input type="radio" name="abKind0" value="f" data-radio="radioAbteilungKind0" required><span>Fußball</span></label><label><input type="radio" name="abKind0" value="t" data-radio="radioAbteilungKind0" required><span>Turnen</span></label></div></div>
+    <div class="field span-2"><span>Geschlecht</span><div class="choice"><label><input type="radio" name="geKind0" value="m" data-radio="radioGeschlechtKind0"><span>männlich</span></label><label><input type="radio" name="geKind0" value="w" data-radio="radioGeschlechtKind0"><span>weiblich</span></label><label><input type="radio" name="geKind0" value="d" data-radio="radioGeschlechtKind0"><span>divers</span></label><label><input type="radio" name="geKind0" value="u" data-radio="radioGeschlechtKind0"><span>keine Angabe</span></label></div></div>
+  </div>
+</div>
+        <div class="sub-fs" data-show-if="kids>=2">
+  <h4>{{icon:child}}2. Kind</h4>
+  <div class="grid-2">
+    <label class="field"><span>Vorname <em>*</em></span><input type="text" name="vnKind1" data-f="txtVornameKind1" autocomplete="off" required></label>
+    <label class="field"><span>Nachname <em>*</em></span><input type="text" name="nnKind1" data-f="txtNachnameKind1" autocomplete="off" required></label>
+    <label class="field"><span>Geburtsdatum (unter 18) <em>*</em></span><input type="date" name="gbKind1" data-f="txtGeburtsdatumKind1" required></label>
+    <div class="field"><span>Abteilung <em>*</em></span><div class="choice"><label><input type="radio" name="abKind1" value="f" data-radio="radioAbteilungKind1" required><span>Fußball</span></label><label><input type="radio" name="abKind1" value="t" data-radio="radioAbteilungKind1" required><span>Turnen</span></label></div></div>
+    <div class="field span-2"><span>Geschlecht</span><div class="choice"><label><input type="radio" name="geKind1" value="m" data-radio="radioGeschlechtKind1"><span>männlich</span></label><label><input type="radio" name="geKind1" value="w" data-radio="radioGeschlechtKind1"><span>weiblich</span></label><label><input type="radio" name="geKind1" value="d" data-radio="radioGeschlechtKind1"><span>divers</span></label><label><input type="radio" name="geKind1" value="u" data-radio="radioGeschlechtKind1"><span>keine Angabe</span></label></div></div>
+  </div>
+</div>
+        <div class="sub-fs" data-show-if="kids>=3">
+  <h4>{{icon:child}}3. Kind</h4>
+  <div class="grid-2">
+    <label class="field"><span>Vorname <em>*</em></span><input type="text" name="vnKind2" data-f="txtVornameKind2" autocomplete="off" required></label>
+    <label class="field"><span>Nachname <em>*</em></span><input type="text" name="nnKind2" data-f="txtNachnameKind2" autocomplete="off" required></label>
+    <label class="field"><span>Geburtsdatum (unter 18) <em>*</em></span><input type="date" name="gbKind2" data-f="txtGeburtsdatumKind2" required></label>
+    <div class="field"><span>Abteilung <em>*</em></span><div class="choice"><label><input type="radio" name="abKind2" value="f" data-radio="radioAbteilungKind2" required><span>Fußball</span></label><label><input type="radio" name="abKind2" value="t" data-radio="radioAbteilungKind2" required><span>Turnen</span></label></div></div>
+    <div class="field span-2"><span>Geschlecht</span><div class="choice"><label><input type="radio" name="geKind2" value="m" data-radio="radioGeschlechtKind2"><span>männlich</span></label><label><input type="radio" name="geKind2" value="w" data-radio="radioGeschlechtKind2"><span>weiblich</span></label><label><input type="radio" name="geKind2" value="d" data-radio="radioGeschlechtKind2"><span>divers</span></label><label><input type="radio" name="geKind2" value="u" data-radio="radioGeschlechtKind2"><span>keine Angabe</span></label></div></div>
+  </div>
+</div>
+        <div class="sub-fs" data-show-if="kids>=4">
+  <h4>{{icon:child}}4. Kind</h4>
+  <div class="grid-2">
+    <label class="field"><span>Vorname <em>*</em></span><input type="text" name="vnKind3" data-f="txtVornameKind3" autocomplete="off" required></label>
+    <label class="field"><span>Nachname <em>*</em></span><input type="text" name="nnKind3" data-f="txtNachnameKind3" autocomplete="off" required></label>
+    <label class="field"><span>Geburtsdatum (unter 18) <em>*</em></span><input type="date" name="gbKind3" data-f="txtGeburtsdatumKind3" required></label>
+    <div class="field"><span>Abteilung <em>*</em></span><div class="choice"><label><input type="radio" name="abKind3" value="f" data-radio="radioAbteilungKind3" required><span>Fußball</span></label><label><input type="radio" name="abKind3" value="t" data-radio="radioAbteilungKind3" required><span>Turnen</span></label></div></div>
+    <div class="field span-2"><span>Geschlecht</span><div class="choice"><label><input type="radio" name="geKind3" value="m" data-radio="radioGeschlechtKind3"><span>männlich</span></label><label><input type="radio" name="geKind3" value="w" data-radio="radioGeschlechtKind3"><span>weiblich</span></label><label><input type="radio" name="geKind3" value="d" data-radio="radioGeschlechtKind3"><span>divers</span></label><label><input type="radio" name="geKind3" value="u" data-radio="radioGeschlechtKind3"><span>keine Angabe</span></label></div></div>
+  </div>
+</div>
+      </fieldset>
+
+      <fieldset class="fs">
+        <legend><span class="num">4</span>SEPA-Lastschrift</legend>
+        <p class="fs__hint">Der Beitrag wird jährlich per Lastschrift eingezogen. Gläubiger-ID des Vereins: DE59ZZZ00000614954.</p>
+        <div class="field"><span>Wer zahlt? <em>*</em></span>
+          <div class="choice"><label><input type="radio" name="zahler" value="A" data-radio="checkSVOZahler" required><span>Antragsteller/-in</span></label><label><input type="radio" name="zahler" value="N" data-radio="checkSVOZahler" required><span>Andere Person</span></label></div>
+        </div>
+        <div class="sub-fs" data-show-if="zahler=N">
+          <h4>{{icon:users}}Kontoinhaber/-in</h4>
+          <div class="grid-2">
+            <label class="field"><span>Vorname <em>*</em></span><input type="text" name="zvn" data-f="txtVornameZahler" required></label>
+            <label class="field"><span>Nachname <em>*</em></span><input type="text" name="znn" data-f="txtNachnameZahler" required></label>
+            <label class="field"><span>Geburtsdatum (ab 18) <em>*</em></span><input type="date" name="zgb" data-f="txtGeburtsdatumZahler" required></label>
+          </div>
+          <div class="grid-3" style="margin-top:14px">
+            <label class="field"><span>Straße <em>*</em></span><input type="text" name="zstr" data-f="txtStrasseZahler" required></label>
+            <label class="field"><span>Hausnr. <em>*</em></span><input type="text" name="zhnr" data-f="txtHausNrZahler" required></label>
+            <label class="field"><span>PLZ <em>*</em></span><input type="text" name="zplz" data-f="txtPLZZahler" inputmode="numeric" required></label>
+            <label class="field"><span>Ort <em>*</em></span><input type="text" name="zort" data-f="txtOrtZahler" required></label>
+            <label class="field"><span>Land <em>*</em></span><input type="text" name="zland" data-f="txtLandZahler" value="Deutschland" required></label>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top:14px">
+          <label class="field"><span>IBAN <em>*</em></span><input type="text" name="iban" data-f="txtIBANZahler" autocomplete="off" maxlength="42" pattern="[A-Za-z]{2}[0-9 ]{2}[A-Za-z0-9 ]{10,38}" placeholder="DE00 0000 0000 0000 0000 00" required></label>
+          <label class="field"><span>BIC</span><input type="text" name="bic" data-f="txtBICZahler" autocomplete="off" maxlength="11"></label>
+        </div>
+        <label class="check" style="margin-top:16px"><input type="checkbox" name="sepa" required><span>Ich ermächtige den SV 1919 Osterburken e.V., den Beitrag von meinem Konto per Lastschrift einzuziehen. <small>Ich kann innerhalb von acht Wochen ab Belastungsdatum die Erstattung verlangen.</small></span></label>
+      </fieldset>
+
+      <fieldset class="fs">
+        <legend><span class="num">5</span>Einverständnis &amp; Unterschrift</legend>
+        <label class="check"><input type="checkbox" name="satzung" required><span>Ich erkenne die <a href="assets/docs/Vereinssatzung_2017.pdf" target="_blank">Vereinssatzung</a> an und bin einverstanden, Informationen und Einladungen des Vereins per E-Mail, Telefon und Messenger zu erhalten.</span></label>
+        <div class="grid-2" style="margin-top:16px">
+          <label class="field"><span>Ort <em>*</em></span><input type="text" name="uort" data-f="txtOrtEinverstaendnis|txtOrtUnterschreiber" value="Osterburken" required></label>
+          <input type="hidden" data-today="txtDatumEinverstaendnis|txtDatumUnterschreiber">
+          <div class="field span-2"><span>Unterschrift Antragsteller/-in</span>
+  <div class="sig" data-sig='[[0,282,87,240,34],[3,278,76,240,34,"zahler=A"]]'><canvas aria-label="Unterschrift Antragsteller/-in: mit Maus oder Finger unterschreiben"></canvas><span class="sig__line"></span>
+  <div class="sig__bar"><span>Mit Maus oder Finger unterschreiben (optional)</span><button type="button" data-sig-clear>Löschen</button></div></div>
+</div>
+          <div class="field span-2" data-show-if="zahler=N"><span>Unterschrift Kontoinhaber/-in (SEPA)</span>
+  <div class="sig" data-sig='[[3,278,76,240,34]]'><canvas aria-label="Unterschrift Kontoinhaber/-in (SEPA): mit Maus oder Finger unterschreiben"></canvas><span class="sig__line"></span>
+  <div class="sig__bar"><span>Mit Maus oder Finger unterschreiben (optional)</span><button type="button" data-sig-clear>Löschen</button></div></div>
+</div>
+        </div>
+      </fieldset>
+      <div class="form-submit">
+        <p>{{icon:lock}}<span>Das PDF wird in deinem Browser erstellt. Deine Angaben – auch die IBAN – werden nirgendwohin übertragen.</span></p>
+        <button class="btn btn--light" type="submit">{{icon:download}}PDF erstellen</button>
+      </div>
+      <p class="form-error" data-error hidden role="alert"></p>
+      <div class="form-result" data-result hidden role="status">
+        <h3>{{icon:check}}Fertig: <span data-file></span></h3>
+        <p>Das ausgefüllte PDF wurde heruntergeladen. So geht es weiter:</p>
+        <ol>
+          <li>PDF prüfen – du kannst es bei Bedarf noch bearbeiten.</li>
+          <li>Unterschreiben, falls noch nicht geschehen.</li>
+          <li>Beim Training abgeben oder per E-Mail an <a href="mailto:info@svosterburken.de">info@svosterburken.de</a> schicken.</li>
+        </ol>
+        <a class="btn btn--sm btn--ghost" data-open href="#" target="_blank">{{icon:file}}PDF öffnen</a>
+      </div>
+    </form>
+    <aside class="form-aside">
+      <div class="card"><h3>{{icon:check}}So geht's</h3><ol><li>Formular ausfüllen und optional unterschreiben.</li><li>„PDF erstellen“ klicken – die Datei wird gespeichert.</li><li>Unterschrieben beim Training abgeben oder an info@svosterburken.de schicken.</li></ol></div>
+      <div class="card"><h3>{{icon:lock}}Deine Daten</h3><p>Das Formular wird nur in deinem Browser ausgefüllt. Es wird nichts an die Website oder an Dritte übertragen.</p></div>
+      <div class="card"><h3>{{icon:download}}Lieber auf Papier?</h3><p>Lade das leere PDF herunter und fülle es von Hand aus.</p><a class="btn btn--sm btn--ghost" href="assets/docs/SVO_Mitgliedsantrag_2026.pdf" download>{{icon:file}}Leeres PDF</a></div>
+    </aside>
+  </div>
+</section>
